@@ -1,5 +1,5 @@
 <?php
-// src/Form/UserType.php
+// src/Form/UtilisateurType.php
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class UserType extends AbstractType
+class UtilisateurType extends AbstractType
 {
     // function pour donner au formulaire le type de l'entité qu'il gère (ainsi il "comprend" qu'il doit bosser avec un User::class)
     public function configureOtions(OptionsResolver $resolver)
@@ -22,8 +22,8 @@ class UserType extends AbstractType
     {
         $builder
             ->add('Pseudo')
-            ->add('mail')
-            ->add('password')
+            ->add('Mail')
+            ->add('Password')
             ->add('save', SubmitType::class)
         ;
     }

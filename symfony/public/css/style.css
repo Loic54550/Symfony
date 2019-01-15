@@ -1,0 +1,94 @@
+
+.Formbody {
+    background-image: radial-gradient(circle at center,black 650px, red );
+    padding-bottom: 0px;
+    color: white;
+
+}
+
+.tittle {
+    color: white;
+
+}
+.undertittle {
+    color: white;
+
+}
+
+.my-4 {
+    background-color: white;
+
+}
+
+.modal{
+	background-image: radial-gradient(circle at center,black 650px, red );
+
+}
+
+.modal-body{
+	background-color: black;
+}
+
+.modal-footer{
+	background-color: black;
+
+}
+
+.GuildeBadge {
+    background-image:radial-gradient(red,black, black);
+    border-radius: 10px;
+
+}
+
+
+.modalVeryLarge {
+
+    color: white;
+}
+
+.my-4 {
+    margin: 25%;
+    height: 2px;
+    background-image: radial-gradient(circle at center,black 50px, red );
+
+}
+
+.my-5 {
+    margin: 25%;
+    height: 2px;
+    background-image: radial-gradient(circle at center,black 50px, yellow );
+
+}
+
+.mainButton {
+    width: 100%;
+
+}
+
+.mainButton2 {
+    width: 40%;
+
+}
+
+.mainButtonmodal {
+    width: 100%;
+    
+}
+
+.table td, .table th, .table thead th {
+    border: 1px solid red;
+    color: red;
+
+}
+
+
+
+.d-block1 {
+    width: 500px;
+    height: 250px;
+    margin: 10%;
+    
+}
+label {
+    color:white;
+}
