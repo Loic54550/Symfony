@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="../../lib/textEnrichi/css/textEnrichi.css"></link>
+    <link rel="stylesheet" type="text/css" href="../../lib/textEnrichi/css/prettify.css"></link>
+    <link rel="stylesheet" type="text/css" href="../../lib/textEnrichi/src/bootstrap-wysihtml5.css"></link>
+{% endblock %}
+{% block content %}
+
+<div class="Formbody">
+    <div style="height: 5vh"></div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-12 text-center">
+            <img src="src/img/wowpage/wow.gif" height="200px"alt="Responsive image">
+        </div>
+    </div>
+    <hr class="my-4">
+    {{ include('tool/textEnrichi.html.twig') }}
+
+    <hr class="my-4">
+    <hr class="my-5">
+
+
+    <hr class="my-5">
+    <footer class="page-footer font-small blue pt-4">
+            <div class="col-md-3"></div>
+            <div class="text-center"> 
+                <img src="src/img/wowpage/footer.png" class="img" height="100px" alt="Responsive image">
+            </div>    
+    </footer>
+</div>   
+
+{% endblock %}

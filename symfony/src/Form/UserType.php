@@ -21,7 +21,7 @@ public function configureOtions(OptionsResolver $resolver)
 public function buildForm(FormBuilderInterface $builder, array $options)
 {
     $builder
-        ->add('name')
+        ->add('Pseudo')
         ->add('mail')
         ->add('password')
         ->add('save', SubmitType::class)

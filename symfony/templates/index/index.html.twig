@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<div class="Formbody">
+    <div class="row">
+        <div class="col-md-4"></div>
+            {{ include('index/tool/carousel.html.twig') }}
+        <div class="col-md-4"></div>
+    </div>    
+    <div class="row">
+    <div class="col-md-4"></div>
+        <h1>Partie Recrutement</h1>
+    </div>
+    <hr class="my-5">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center">    
+            <a data-toggle="modal" class="mb-4 btn btn-outline-warning mainButton2" data-target="#exampleModal3" >Réglement de la Guilde</a>
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-center">    
+            <a data-toggle="modal" class="btn btn-outline-warning mainButton2" data-target="#exampleModal4" >Réglement et Recrutement Rechercher</a>
+        </div>    
+    </div>
+    <hr class="my-5">
+    <div class="row">
+    <div class="col-md-4"></div>
+        <h1>Partie Membres</h1>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"><a data-toggle="modal" class="btn btn-outline-primary mainButton" data-target="#exampleModal2">Enregistrez-vous en ligne</a></div>
+        <div class="col-md-3"><a data-toggle="modal" class="btn btn-outline-danger mainButton" data-target="#exampleModal" >Connectez-vous a votre compte</a></div>
+    </div>
+    <hr class="my-4">
+    <footer class="page-footer font-small blue pt-4">
+            <div class="col-md-3"></div>
+            <div class="text-center"> 
+                <img src="src/img/wowpage/footer.png" class="img" height="100px" alt="Responsive image">
+            </div>    
+    </footer>
+</div>   
+    {{ include('index/modalTemplate/modalLogin.html.twig') }}
+    {{ include('index/modalTemplate/modalRegister.html.twig') }}
+    {{ include('index/modalTemplate/modalReglement.html.twig') }}
+    {{ include('index/modalTemplate/modalRecrutement.html.twig') }}
+{% endblock %}
