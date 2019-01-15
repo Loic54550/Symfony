@@ -30,7 +30,8 @@
 }
 
 .modal-footer{
-	background-color: black;
+    background-color: black;
+    border-top: 5px solid black;
 
 }
 
