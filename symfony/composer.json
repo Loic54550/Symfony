@@ -23,7 +23,10 @@
         "symfony/twig-bundle": "4.2.*",
         "symfony/validator": "4.2.*",
         "symfony/web-link": "4.2.*",
-        "symfony/yaml": "4.2.*"
+        "symfony/webpack-encore-bundle": "^1.0",
+        "symfony/yaml": "4.2.*",
+        "mouf/nodejs-installer": "~1.0"
+        
     },
     "require-dev": {
         "symfony/debug-pack": "*",
