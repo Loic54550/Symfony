@@ -18,25 +18,24 @@
 /* HR */
 .my-4 {
     margin: 25%;
-    height: 2px;
+    height: 1px;
     background-image: radial-gradient(circle at center,black 50px, red );
 
 }
 
 .my-5 {
-    margin: 25%;
-    height: 2px;
+    margin: 20%;
+    height: 1px;
     background-image: radial-gradient(circle at center,black 50px, yellow );
 
 }
 /**/
 
-
+/* Modal Configue Reglement, Recrutement */
 .modalVeryLarge {
-
     color: white;
 }
-/* Modal Configue Reglement, Recrutement */
+
 .modal{
 	background-image: radial-gradient(circle at center,black 650px, red );
 
@@ -59,7 +58,6 @@
 
 .mainButtonmodal1 {
     width: 100%;
-    border-color:red;
     
 }
 
@@ -68,9 +66,11 @@
     border-color:blue;
     
 }
+
 .mainButton2 {
     width: 50%;
     border-color:yellow;
+
 
 }
 .mainButton3 {
@@ -78,31 +78,17 @@
     border-color:red;
 
 }
-/**/
 
-
-/* Modal Configue Inscription, Register*/
-.form-group {
-    background-image: url("../img/wowpage/nen.gif");
-    color: red;
-}
-
-#form {
+.modal button {
+    color: white;
+    border-color:yellow;
     background-color: black;
 }
-
-
-
-
-
-
-
-
-
+/**/
 
 .table td, .table th, .table thead th {
-    border: 1px solid red;
-    color: red;
+    border: 1px solid yellow;
+    color: white;
 
 }
 
@@ -123,12 +109,3 @@
 label {
     color:white;
 }
-
-#exampleModal label {
-    color: black;
-}
-
-.modal button {
-    color: black;
-}
-
