@@ -25,7 +25,7 @@ class UtilisateurInscriptionType extends AbstractType
             ->add('mail')
             ->add('password')
             ->add('pseudo')
-            ->add('Connection', SubmitType::class)
+            ->add('inscription', SubmitType::class)
         ;
     }
 }

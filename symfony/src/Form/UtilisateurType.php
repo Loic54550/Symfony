@@ -24,7 +24,7 @@ class UtilisateurType extends AbstractType
         $builder
             ->add('mail')
             ->add('password')
-            ->add('Connection', SubmitType::class)
+            ->add('connection', SubmitType::class)
         ;
     }
 }

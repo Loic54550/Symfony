@@ -31,12 +31,12 @@
 }
 /**/
 
-/* Modal Configue */
+
 .modalVeryLarge {
 
     color: white;
 }
-
+/* Modal Configue Reglement, Recrutement */
 .modal{
 	background-image: radial-gradient(circle at center,black 650px, red );
 
@@ -80,11 +80,36 @@
 }
 /**/
 
+
+/* Modal Configue Inscription, Register*/
+.form-group {
+    background-image: url("../img/wowpage/nen.gif");
+    color: red;
+}
+
+#form {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
 .table td, .table th, .table thead th {
     border: 1px solid red;
     color: red;
 
 }
+
+
+
+
+
 
 /* Carousel */
 .d-block1 {
@@ -102,3 +127,8 @@ label {
 #exampleModal label {
     color: black;
 }
+
+.modal button {
+    color: black;
+}
+
