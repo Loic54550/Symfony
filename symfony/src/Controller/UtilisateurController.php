@@ -68,7 +68,25 @@ class UtilisateurController extends AbstractController
 
         ]);
     }
+
+    /**
+     * @Route("/forum", name="forum")
+     */
+    public function forum(Request $request)
+    {
+
+
+        
+
+
+        
+        return $this->render('index/forum.html.twig', [
+
+
+        ]);
+    }
 }
+
 
 
 

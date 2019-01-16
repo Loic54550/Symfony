@@ -24,21 +24,21 @@ class Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="Mail", type="string", length=50, nullable=false)
+     * @ORM\Column(name="mail", type="string", length=50, nullable=false)
      */
     private $mail;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Pseudo", type="string", length=50, nullable=false)
+     * @ORM\Column(name="pseudo", type="string", length=50, nullable=false)
      */
     private $pseudo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Password", type="string", length=15, nullable=false)
+     * @ORM\Column(name="password", type="string", length=15, nullable=false)
      */
     private $password;
 

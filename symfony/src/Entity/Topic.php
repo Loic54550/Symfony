@@ -38,9 +38,9 @@ class Topic
     /**
      * @var int
      *
-     * @ORM\Column(name="TopicId", type="integer", nullable=false)
+     * @ORM\Column(name="idsubcat", type="integer", nullable=false)
      */
-    private $topicid;
+    private $idsubcat;
 
     public function getId(): ?int
     {
@@ -71,14 +71,14 @@ class Topic
         return $this;
     }
 
-    public function getTopicid(): ?int
+    public function getIdsubcat(): ?int
     {
-        return $this->topicid;
+        return $this->idsubcat;
     }
 
-    public function setTopicid(int $topicid): self
+    public function setIdsubcat(int $idsubcat): self
     {
-        $this->topicid = $topicid;
+        $this->idsubcat = $idsubcat;
 
         return $this;
     }
