@@ -2,26 +2,20 @@
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="index.php" method="post">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email adress</label>
-                        <input type="text" class="form-control" name="emailInscription" aria-describedby="emailHelp" placeholder="ex:linda@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Pseudo</label>
-                        <input type="text" class="form-control" name="pseudoInscription" aria-describedby="emailHelp" placeholder="ex:linda">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" name="pwdInscription" placeholder="Password">
-                    </div>
+            {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_label(form.pseudo) }}
+                    {{ form_widget(form.pseudo) }}
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger mainButtonmodal" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-outline-primary mainButtonmodal">S'inscrire</button>
+                <div class="form-group">
+                    {{ form_label(form.mail) }}
+                    {{ form_widget(form.mail) }}
                 </div>
-            </form>
+                <div class="form-group">
+                    {{ form_label(form.password) }}
+                    {{ form_widget(form.password) }}
+                </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>

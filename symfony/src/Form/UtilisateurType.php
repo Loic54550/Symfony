@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Entity\Utilisateur;
 
 class UtilisateurType extends AbstractType
 {
@@ -13,7 +14,7 @@ class UtilisateurType extends AbstractType
     public function configureOtions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => User::class,
+            'data_class' => Utilisateur::class,
         ));
     }
 
@@ -21,10 +22,9 @@ class UtilisateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Pseudo')
-            ->add('Mail')
-            ->add('Password')
-            ->add('save', SubmitType::class)
+            ->add('mail')
+            ->add('password')
+            ->add('Connection', SubmitType::class)
         ;
     }
 }

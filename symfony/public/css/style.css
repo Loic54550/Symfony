@@ -15,38 +15,7 @@
 
 }
 
-.my-4 {
-    background-color: white;
-
-}
-
-.modal{
-	background-image: radial-gradient(circle at center,black 650px, red );
-
-}
-
-.modal-body{
-	background-color: black;
-}
-
-.modal-footer{
-    background-color: black;
-    border-top: 5px solid black;
-
-}
-
-.GuildeBadge {
-    background-image:radial-gradient(red,black, black);
-    border-radius: 10px;
-
-}
-
-
-.modalVeryLarge {
-
-    color: white;
-}
-
+/* HR */
 .my-4 {
     margin: 25%;
     height: 2px;
@@ -60,21 +29,56 @@
     background-image: radial-gradient(circle at center,black 50px, yellow );
 
 }
+/**/
 
-.mainButton {
-    width: 100%;
+/* Modal Configue */
+.modalVeryLarge {
+
+    color: white;
+}
+
+.modal{
+	background-image: radial-gradient(circle at center,black 650px, red );
 
 }
 
-.mainButton2 {
-    width: 40%;
+.modal-body{
+	background-image: url("../img/wowpage/nen.gif");
+}
 
+.modal-footer{
+    background-color: black;
+    border-top: 5px solid black;
+
+}
+.mainButton {
+    width: 40%;
+    border-color:blue;
+
+}
+
+.mainButtonmodal1 {
+    width: 100%;
+    border-color:red;
+    
 }
 
 .mainButtonmodal {
     width: 100%;
+    border-color:blue;
     
 }
+.mainButton2 {
+    width: 50%;
+    border-color:yellow;
+
+}
+.mainButton3 {
+    width: 50%;
+    border-color:red;
+
+}
+/**/
 
 .table td, .table th, .table thead th {
     border: 1px solid red;
@@ -82,14 +86,19 @@
 
 }
 
-
-
+/* Carousel */
 .d-block1 {
     width: 500px;
     height: 250px;
     margin: 10%;
     
 }
+/**/
+
 label {
     color:white;
+}
+
+#exampleModal label {
+    color: black;
 }
