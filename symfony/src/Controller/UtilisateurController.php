@@ -86,6 +86,22 @@ class UtilisateurController extends AbstractController
             'categories' => $categories,
         ]);
     }
+    
+        /**
+     * @Route("/subcat", name="subcat")
+     */
+    public function subcat(Request $request)
+    {
+        $subcats = $this->getDoctrine()
+            ->getRepository(subcat::class)
+            ->findAll()
+        ;
+        
+        return $this->render('index/subcat.html.twig', [
+            'subcat' => $subcats,
+        ]);
+    }
+    
 }
 
 
