@@ -42,25 +42,6 @@ class Message
      */
     private $content;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="UtilisateurId", type="integer", nullable=false)
-     */
-    private $utilisateurid;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="TopicId", type="integer", nullable=false)
-     */
-    private $topicid;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
@@ -96,30 +77,5 @@ class Message
 
         return $this;
     }
-
-    public function getUtilisateurid(): ?int
-    {
-        return $this->utilisateurid;
-    }
-
-    public function setUtilisateurid(int $utilisateurid): self
-    {
-        $this->utilisateurid = $utilisateurid;
-
-        return $this;
-    }
-
-    public function getTopicid(): ?int
-    {
-        return $this->topicid;
-    }
-
-    public function setTopicid(int $topicid): self
-    {
-        $this->topicid = $topicid;
-
-        return $this;
-    }
-
 
 }

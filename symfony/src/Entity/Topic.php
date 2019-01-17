@@ -35,13 +35,6 @@ class Topic
      */
     private $date;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idsubcat", type="integer", nullable=false)
-     */
-    private $idsubcat;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -67,18 +60,6 @@ class Topic
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    public function getIdsubcat(): ?int
-    {
-        return $this->idsubcat;
-    }
-
-    public function setIdsubcat(int $idsubcat): self
-    {
-        $this->idsubcat = $idsubcat;
 
         return $this;
     }

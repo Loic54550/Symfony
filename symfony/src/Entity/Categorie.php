@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,15 +31,13 @@ class Categorie
     private $name;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="ForumId", type="integer", nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\Subcat", mappedBy="categorie")
      */
-    private $forumid;
+    private $subcats;
 
-    public function getId(): ?int
+    public function __construct()
     {
-        return $this->id;
+        $this->subcats = new ArrayCollection();
     }
 
     public function getName(): ?string
@@ -52,17 +52,34 @@ class Categorie
         return $this;
     }
 
-    public function getForumid(): ?int
+    /**
+     * @return Collection|Subcat[]
+     */
+    public function getSubcats(): Collection
     {
-        return $this->forumid;
+        return $this->subcats;
     }
 
-    public function setForumid(int $forumid): self
+    public function addSubcat(Subcat $subcat): self
     {
-        $this->forumid = $forumid;
+        if (!$this->subcats->contains($subcat)) {
+            $this->subcats[] = $subcat;
+            $subcat->setCategorie($this);
+        }
 
         return $this;
     }
 
+    public function removeSubcat(Subcat $subcat): self
+    {
+        if ($this->subcats->contains($subcat)) {
+            $this->subcats->removeElement($subcat);
+            // set the owning side to null (unless already changed)
+            if ($subcat->getCategorie() === $this) {
+                $subcat->setCategorie(null);
+            }
+        }
 
+        return $this;
+    }
 }

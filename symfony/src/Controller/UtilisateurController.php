@@ -11,6 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Utilisateur;
 use App\Form\UtilisateurType;
 use App\Form\UtilisateurInscriptionType;
+use App\Entity\Categorie;
+use App\Repository\CategorieRepository;
+use App\Entity\Subcat;
 
 
 class UtilisateurController extends AbstractController
@@ -74,15 +77,13 @@ class UtilisateurController extends AbstractController
      */
     public function forum(Request $request)
     {
-
-
-        
-
-
+        $categories = $this->getDoctrine()
+            ->getRepository(Categorie::class)
+            ->findAll()
+        ;
         
         return $this->render('index/forum.html.twig', [
-
-
+            'categories' => $categories,
         ]);
     }
 }

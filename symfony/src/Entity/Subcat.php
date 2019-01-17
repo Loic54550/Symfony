@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,11 +31,10 @@ class Subcat
     private $name;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idcat", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie", inversedBy="subcats")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $idcat;
+    private $categorie;
 
     public function getId(): ?int
     {
@@ -52,17 +53,16 @@ class Subcat
         return $this;
     }
 
-    public function getIdcat(): ?int
+    public function getCategorie(): ?Categorie
     {
-        return $this->idcat;
+        return $this->categorie;
     }
 
-    public function setIdcat(int $idcat): self
+    public function setCategorie(?Categorie $categorie): self
     {
-        $this->idcat = $idcat;
+        $this->categorie = $categorie;
 
         return $this;
     }
-
 
 }
