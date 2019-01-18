@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    {{ include('index/tool/navbar.html.twig') }}
+    <div class="Formbody">
+        <div class="row">
+            <div class="col-md-3"></div>
+            {{ include('index/tool/carousel.html.twig') }}
+        </div>  
+        <hr class="my-4">
+        {{ include('index/tool/message.html.twig') }}
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button type="button" class="mb-4 btn btn-outline-danger mainButton2" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+            </div>
+        </div>
+        <hr class="my-4">
+        {{ include('index/tool/footer.html.twig') }}
+    </div>  
+    {{ include('index/modalTemplate/modaltext.html.twig') }}
+{% endblock %}
+

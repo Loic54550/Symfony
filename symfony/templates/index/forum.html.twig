@@ -1,51 +1,38 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-
+    {{ include('index/tool/navbar.html.twig') }}
     <div class="Formbody">
         <div class="row">
-        <div class="col-md-3"></div>
-            <div class="col-md-12 text-center">
-                <img src="img/wowpage/wow.gif" height="200px"alt="Responsive image">
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">    
-                <button type="button" class="col-md-4 btn btn-outline-danger"><u>Déconnection</u></button>
-            </div>    
-        </div>
+            <div class="col-md-3"></div>
+            {{ include('index/tool/carousel.html.twig') }}
+        </div>  
         <hr class="my-4">
         {% for categorie in categories %}
             <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <table class="table">
-                            <thead class="thead">
-                                <tr>
-                                    <th><u>{{ categorie.name }}</u></th>
-                                    <th>Dernier messsage</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for subcat in categorie.subcats %}
+                        <div class="col-md-8">
+                            <table class="table">
+                                <thead class="thead">
                                     <tr>
-                                        <td>{{ subcat.name }}</td>
-                                        <td>@mdo</td>
+                                        <th><u>{{ categorie.name }}</u></th>
+                                        <th>Dernier messsage</th>
                                     </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>  
-                    </div>
+                                </thead>
+                                <tbody>
+                                    {% for subcat in categorie.subcats %}
+                                        <tr>
+                                            <td>{{ subcat.name }}</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>  
+                        </div>
+                    <div class="col-md-2"></div>
                 </div>
-                <hr class="my-5">
+                <hr class="my-4">
         {% endfor %}
-        <footer class="page-footer font-small blue pt-4">
-                <div class="col-md-3"></div>
-                <div class="text-center"> 
-                    <img src="img/wowpage/footer.png" class="img" height="100px" alt="Responsive image" />
-                </div>
-        </footer>
+        {{ include('index/tool/footer.html.twig') }}
     </div>  
-
 {% endblock %}

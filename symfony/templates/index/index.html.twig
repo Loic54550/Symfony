@@ -7,42 +7,42 @@
             {{ include('index/tool/carousel.html.twig') }}
         </div>    
         <div class="row">
-        <div class="col-md-3"></div>
-            <h3>Partie Recrutement</h3>
+            <div class="col-md-3"></div>
+                <h3>Partie Recrutement</h3>
+            <div class="col-md-9"></div>
         </div>
         <hr class="my-5">
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">    
-                <a data-toggle="modal" class="mb-4 btn btn-outline-danger mainButton2" data-target="#exampleModal3" >Réglement de la Guilde</a>
-            </div>    
+                <div class="col-md-6 text-center">    
+                    <a data-toggle="modal" class="mb-2 btn btn-outline-danger mainButton2" data-target="#exampleModal3" >Réglement de la Guilde</a>
+                </div>    
+            <div class="col-md-3"></div>
         </div>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">    
-                <a data-toggle="modal" class="btn btn-outline-danger mainButton2" data-target="#exampleModal4" >Réglement et Recrutement Rechercher</a>
-            </div>    
-        </div>
-        <hr class="my-5">
-        <div class="row">
-        <div class="col-md-3"></div>
-            <h3>Partie Membres</h3>
-        </div>
-        <hr class="my-4">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">  
-                <a data-toggle="modal" class=" btn btn-outline-primary mainButton" data-target="#exampleModal2">Enregistrez-vous en ligne</a>
-                <a data-toggle="modal" class=" btn btn-outline-danger mainButton3" data-target="#exampleModal" >Connectez-vous a votre compte</a>
-            </div>
-        </div>
-        <hr class="my-4">
-        <footer class="page-footer font-small blue pt-4">
-                <div class="col-md-3"></div>
-                <div class="text-center"> 
-                    <img src="img/wowpage/footer.png" class="img" height="100px" alt="Responsive image" />
+                <div class="col-md-6 text-center">    
+                    <a data-toggle="modal" class="btn btn-outline-danger mainButton2" data-target="#exampleModal4" >Réglement et Recrutement Rechercher</a>
                 </div>
-        </footer>
+            <div class="col-md-3"></div>    
+        </div>
+        <hr class="my-5">
+        <div class="row">
+            <div class="col-md-3"></div>
+                <h3>Partie Membres</h3>
+            <div class="col-md-9"></div>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-md-3"></div>
+                <div class="col-md-6 text-center">  
+                    <a data-toggle="modal" class=" mr-sm-2 btn btn-outline-primary mainButton" data-target="#exampleModal2">Enregistrez-vous en ligne</a>
+                    <a data-toggle="modal" class=" btn btn-outline-danger mainButton4" data-target="#exampleModal" >Connectez-vous a votre compte</a>
+                </div>
+            <div class="col-md-3"></div>
+        </div>
+        <hr class="my-4">
+        {{ include('index/tool/footer.html.twig') }}
     </div>   
     {% include 'index/modalTemplate/modalLogin.html.twig' with {'form' : formConnection } %}
     {% include 'index/modalTemplate/modalRegister.html.twig' with {'form' : formInscription } %}

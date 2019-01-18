@@ -36,6 +36,16 @@ class Subcat
      */
     private $categorie;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Topic", mappedBy="subcat")
+     */
+    private $topics;
+
+    public function __construct()
+    {
+        $this->topics = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +71,37 @@ class Subcat
     public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Topic[]
+     */
+    public function getTopics(): Collection
+    {
+        return $this->topics;
+    }
+
+    public function addTopic(Topic $topic): self
+    {
+        if (!$this->topics->contains($topic)) {
+            $this->topics[] = $topic;
+            $topic->setSubcat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTopic(Topic $topic): self
+    {
+        if ($this->topics->contains($topic)) {
+            $this->topics->removeElement($topic);
+            // set the owning side to null (unless already changed)
+            if ($topic->getSubcat() === $this) {
+                $topic->setSubcat(null);
+            }
+        }
 
         return $this;
     }

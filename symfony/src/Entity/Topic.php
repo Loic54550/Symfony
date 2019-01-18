@@ -2,7 +2,8 @@
 
 namespace App\Entity;
 
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +37,12 @@ class Topic
      */
     private $date;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Subcat", inversedBy="topics")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $subcat;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +68,18 @@ class Topic
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSubcat(): ?Subcat
+    {
+        return $this->subcat;
+    }
+
+    public function setSubcat(?Subcat $subcat): self
+    {
+        $this->subcat = $subcat;
 
         return $this;
     }
