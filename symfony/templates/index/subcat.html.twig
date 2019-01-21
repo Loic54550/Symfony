@@ -2,17 +2,11 @@
 
 {% block content %}
 {{ include('index/tool/navbar.html.twig') }}
-    <div class="Formbody">
+    <div class="Formbody2">
         <div class="row">
             <div class="col-md-3"></div>
             {{ include('index/tool/carousel.html.twig') }}
         </div>  
-        <div class="row">
-        <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">    
-                <button type="button" class="col-md-4 btn btn-outline-danger mainButton2"><u>Déconnection</u></button>
-            </div>    
-        </div>
         <hr class="my-4">
         {% for subcat in subcats %}
             <div class="row">
