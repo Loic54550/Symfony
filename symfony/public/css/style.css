@@ -1,6 +1,7 @@
 
 .Formbody {
     /*background-color: black;*/
+    background-image:url(../img/wowpage/6.png);
     background-color: black;
     background-repeat: no-repeat; 
     color: white;
@@ -171,11 +172,6 @@ label {
     color:red;
 }
 
-.mainButton6 {
-    width: 50%;
-    border-color:;
-
-}
 /**/
 /*Card Message*/
 
@@ -200,7 +196,7 @@ label {
 /**/
 
 .jumbotron {
-    border: 3px solid red;
+    border: 5px double red;
     background-color: transparent;
 
 }

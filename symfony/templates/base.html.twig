@@ -12,10 +12,21 @@
     
     <title>Projet Forum Professionel Guilde</title>
     {% block style %}{% endblock %}
+    {% block script %}{% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
-    {% block script %}{% endblock %}
+    {{ include('navbar.html.twig') }}
+    <div class="Formbody2">
+        {{ include('carousel.html.twig') }}
+        {% block content %}{% endblock %}
+        <footer class="page-footer font-small blue pt-4">
+            <div class="col-md-3"></div>
+                <div class="text-center"> 
+                    <img src="img/wowpage/footer.png" class="imgfooter" alt="Responsive image" />
+                </div>
+            <div class="col-md-9"></div>
+        </footer>
+    </div> 
 </body>
 </html>
     

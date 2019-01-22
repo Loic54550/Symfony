@@ -1,0 +1,23 @@
+{% if messages|length == 0 %}
+    AUCUN message
+{% else %}
+    {% for message in messages %}
+        {{ message.content }}
+    {% endfor %}
+{% endif %}
+
+{{ form_start(formMessage) }}
+<div class="row">
+    <div class="col-md-2"></div>
+        <div class="col-md-8 card mb-3">
+            <div class="card-header "><u class="name">{{ topic.name }}</u></div>
+            <div class="card-body text-light">
+                <h5 class="card-title">UTILISATUUUUU</h5>
+                {{ form_widget(formMessage.content) }}
+                <u class="name">{{ form_widget(formMessage.date) }}</u>
+            </div>
+            <div class="card-footer "></div>
+        </div>
+    <div class="col-md-2"></div>
+</div>
+{{ form_end(formMessage) }}

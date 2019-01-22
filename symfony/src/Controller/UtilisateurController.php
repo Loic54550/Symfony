@@ -7,14 +7,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
 use App\Entity\Utilisateur;
+use App\Entity\Categorie;
+use App\Entity\Subcat;
+use App\Entity\Message;
+use App\Entity\Topic;
 use App\Form\UtilisateurType;
 use App\Form\UtilisateurInscriptionType;
-use App\Entity\Categorie;
+use App\Form\MessageType;
 use App\Repository\CategorieRepository;
-use App\Entity\Subcat;
-
 
 class UtilisateurController extends AbstractController
 {
@@ -23,8 +24,6 @@ class UtilisateurController extends AbstractController
      */
     public function index(Request $request)
     {
-
-
         $utilisateur = new Utilisateur();
 
         $formConnection = $this->createForm(UtilisateurType::class, $utilisateur);
@@ -62,8 +61,6 @@ class UtilisateurController extends AbstractController
                 return $this->redirectToRoute('acc');
             }
         }
-
-
         
         return $this->render('index/index.html.twig', [
             'formConnection' => $formConnection->createView(),
@@ -82,7 +79,7 @@ class UtilisateurController extends AbstractController
             ->findAll()
         ;
         
-        return $this->render('index/forum.html.twig', [
+        return $this->render('forum/forum.html.twig', [
             'categories' => $categories,
         ]);
     }
@@ -97,22 +94,66 @@ class UtilisateurController extends AbstractController
             ->findAll()
         ;
         
-        return $this->render('index/subcat.html.twig', [
+        return $this->render('subcat/subcat.html.twig', [
             'subcats' => $subcats,
         ]);
     }
 
-        /**
-     * @Route("/message", name="message")
+    /**
+     * @Route("/topic/{topic}", name="topic")
      */
-    public function message(Request $request)
+    public function topic(Request $request, $topic)
     {
-        
-        return $this->render('index/message.html.twig', [
+        ///////////////////////////// SESSION id
+        $utilisateur = $this->getDoctrine()
+            ->getRepository(Utilisateur::class)
+            ->find(1) //// REMPLACER PAR SESSION _ID
+        ;
 
+        $topic = $this->getDoctrine()
+            ->getRepository(Topic::class)
+            ->find($topic)
+        ;
+
+        $messages = $this->getDoctrine()
+            ->getRepository(Message::class)
+            ->findAll()
+        ;
+
+        $message = new Message();
+
+        $formMessage = $this->createForm(MessageType::class, $message);
+
+        if ($request->isMethod('POST')) 
+        {
+            $formMessage->submit($request->request->get($formMessage->getName()));
+            if ($formMessage->isSubmitted() && $formMessage->isValid()) 
+            {
+                $message = $formMessage->getData();
+
+                
+                $message->setDateEdition(new \DateTime('today'));
+                $message->setTopic($topic);
+                $message->setUtilisateur($utilisateur);
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($message);
+                $entityManager->flush();
+
+            }
+        }
+
+        $topic = $this->getDoctrine()
+            ->getRepository(Topic::class)
+            ->find($topic)
+        ;
+
+        return $this->render('topic/topic.html.twig', [
+            'formMessage' => $formMessage->createView(),
+            'topic' => $topic,
+            'messages' => $messages,
         ]);
     }
-    
 }
 
 

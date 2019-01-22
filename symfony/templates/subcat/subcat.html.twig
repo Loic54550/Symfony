@@ -1,25 +1,25 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    {{ include('index/tool/navbar.html.twig') }}
+{{ include('index/tool/navbar.html.twig') }}
     <div class="Formbody2">
             {{ include('index/tool/carousel.html.twig') }}
         <hr class="my-4">
-        {% for categorie in categories %}
+        {% for subcat in subcats %}
             <div class="row">
                     <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <table class="table">
                                 <thead class="thead">
                                     <tr>
-                                        <th><u>{{ categorie.name }}</u></th>
+                                        <th><u>{{ subcat.name }}</u></th>
                                         <th>Dernier messsage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for subcat in categorie.subcats %}
+                                    {% for topic in subcat.topics %}
                                         <tr>
-                                            <td>{{ subcat.name }}</td>
+                                            <td><a href="{{ path('topic') }}">{{ topic.name }}</a></td>
                                             <td>@mdo</td>
                                         </tr>
                                     {% endfor %}
@@ -32,4 +32,5 @@
         {% endfor %}
         {{ include('index/tool/footer.html.twig') }}
     </div>  
+
 {% endblock %}
