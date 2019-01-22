@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\Utilisateur;
 use App\Entity\Categorie;
 use App\Entity\Subcat;
@@ -22,7 +23,7 @@ class UtilisateurController extends AbstractController
     /**
      * @Route("/acc", name="acc")
      */
-    public function index(Request $request)
+    public function index(Request $request, SessionInterface $session)
     {
         $utilisateur = new Utilisateur();
 
@@ -30,49 +31,59 @@ class UtilisateurController extends AbstractController
 
         $formInscription = $this->createForm(UtilisateurInscriptionType::class, $utilisateur);
 
+        $connection = false;
+
         if ($request->isMethod('POST')) 
         {
             $formConnection->submit($request->request->get($formConnection->getName()));
             if ($formConnection->isSubmitted() && $formConnection->isValid()) 
             {
-                $utilisateurD = $formConnection->getData();
+                $utilisateur = $formConnection->getData();
 
                 $repository = $this->getDoctrine()->getRepository(Utilisateur::class);
+                
                 $utilisateur = $repository->findOneBy([
-                    'mail' => $utilisateurD->getMail(),
-                    'password' => $utilisateurD->getPassword(),
+                    'mail' => $utilisateur->getMail(),
+                    'password' => $utilisateur->getPassword(),
                 ]);
-
+                
                 if(!is_null($utilisateur)) {
-                    
+                    $session->set('id', $utilisateur->getId());
+                    $session->set('pseudo', $utilisateur->getPseudo());
+                    $connection = true;
                 }
                 //return $this->redirectToRoute('user');
+                
             }
 
-            $formInscription->submit($request->request->get($formInscription->getName()));
-            if ($formInscription->isSubmitted() && $formInscription->isValid()) 
+            if (!$connection)
             {
-                $utilisateurD = $formInscription->getData();
+                $formInscription->submit($request->request->get($formInscription->getName()));
+                if ($formInscription->isSubmitted() && $formInscription->isValid()) 
+                { 
+                    
+                    $utilisateur = $formInscription->getData();
 
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($utilisateurD);
-                $entityManager->flush();
-                
-                return $this->redirectToRoute('acc');
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $entityManager->persist($utilisateur);
+                    $entityManager->flush();
+                    
+                    return $this->redirectToRoute('acc');
+                }
             }
         }
         
         return $this->render('index/index.html.twig', [
             'formConnection' => $formConnection->createView(),
             'formInscription' => $formInscription->createView(),
-
+            'test' => $session->get('pseudo'),
         ]);
     }
 
     /**
      * @Route("/forum", name="forum")
      */
-    public function forum(Request $request)
+    public function forum(Request $request, $session)
     {
         $categories = $this->getDoctrine()
             ->getRepository(Categorie::class)
@@ -102,12 +113,12 @@ class UtilisateurController extends AbstractController
     /**
      * @Route("/topic/{topic}", name="topic")
      */
-    public function topic(Request $request, $topic)
+    public function topic(Request $request, $topic, $session)
     {
         ///////////////////////////// SESSION id
         $utilisateur = $this->getDoctrine()
             ->getRepository(Utilisateur::class)
-            ->find(1) //// REMPLACER PAR SESSION _ID
+            ->find($session.get('id'))
         ;
 
         $topic = $this->getDoctrine()

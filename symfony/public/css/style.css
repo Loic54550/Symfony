@@ -1,9 +1,6 @@
 
 .Formbody {
-    /*background-color: black;*/
-    background-image:url(../img/wowpage/6.png);
     background-color: black;
-    background-repeat: no-repeat; 
     color: white;
 
 }
@@ -111,6 +108,7 @@
 .table td, .table th, .table thead th {
     border: 2px solid red;
     color: white;
+    width: 15%;
 
 }
  /**/
@@ -195,13 +193,14 @@ label {
 }
 /**/
 
-.jumbotron {
-    border: 5px double red;
-    background-color: transparent;
-
-}
-
 h5
 {
     border: 1px red solid;
 }
+
+.imgfooter {
+    width: 200px;
+    height: 75px;
+}
+
+

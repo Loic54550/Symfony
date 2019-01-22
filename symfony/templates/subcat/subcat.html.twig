@@ -1,9 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-{{ include('index/tool/navbar.html.twig') }}
     <div class="Formbody2">
-            {{ include('index/tool/carousel.html.twig') }}
         <hr class="my-4">
         {% for subcat in subcats %}
             <div class="row">
@@ -30,7 +28,6 @@
                 </div>
                 <hr class="my-4">
         {% endfor %}
-        {{ include('index/tool/footer.html.twig') }}
     </div>  
 
 {% endblock %}

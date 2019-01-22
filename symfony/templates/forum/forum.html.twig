@@ -16,8 +16,9 @@
                             <tbody>
                                 {% for subcat in categorie.subcats %}
                                     <tr>
-                                        <td>{{ subcat.name }}</td>
-                                        <td>@mdo</td>
+                                        <td><a href="{{ path('subcat') }}">{{ subcat.name }}</a></td>
+                                        <td>utilisateur</td>
+                                        <td>date/heure</td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
