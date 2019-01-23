@@ -6,8 +6,7 @@
 }
 
 .Formbody2 {
-    background-color: black;
-    /*background-image:url(../img/wowpage/kak.png);*/
+    background-color: red;
     color: white;
 
 }
@@ -145,16 +144,37 @@ label {
 .navbar {
     /*background-image: radial-gradient(circle at center,red 50px, black );*/
     background-color: black;
+    border:5px double red;
     
 }
 
-.mainButton3 {
+.text-uppercase {
+    color: red;
+    font-size: 1 rem;
+    margin-top: 15px;
+}
+
+.mainButton3, a {
     width: 10%;
     border-color:red;
+    
 
 }
 
 .mainButton5 {
+    width: 10%;
+    border-color:blue;
+
+}
+
+.mainButton6 {
+    width: 10%;
+    border-color:grey;
+    color:grey;
+
+}
+
+.mainButton7 {
     width: 10%;
     border-color:blue;
 

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div class="Formbody">
+
         <div class="row">
             <div class="col-md-3"></div>
                 <h5>Partie Recrutement</h5>
@@ -39,7 +39,7 @@
             <div class="col-md-3"></div>
         </div>
         <hr class="my-4">
-    </div>   
+
     {% include 'index/modalTemplate/modalLogin.html.twig' with {'form' : formConnection } %}
     {% include 'index/modalTemplate/modalRegister.html.twig' with {'form' : formInscription } %}
     {{ include('index/modalTemplate/modalReglement.html.twig') }}

@@ -1,33 +1,34 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div class="Formbody2">
+    <div class="Formbody">
         <hr class="my-4">
-        {% for subcat in subcats %}
-            <div class="row">
-                    <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <table class="table">
-                                <thead class="thead">
-                                    <tr>
-                                        <th><u>{{ subcat.name }}</u></th>
-                                        <th>Dernier messsage</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for topic in subcat.topics %}
-                                        <tr>
-                                            <td><a href="{{ path('topic') }}">{{ topic.name }}</a></td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>  
-                        </div>
-                    <div class="col-md-2"></div>
+        {{ dump(subcat) }}
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th><u>{{ subcat.name }}</u></th>
+                                <th>Dernier messsage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {#
+                            {% for topic in subcat.topics %}
+                                <tr>
+                                    <td><a href="{{ path('topic', { 'topic': topic.id }) }}">{{ topic.name }}</a></td>
+                                    <td>@mdo</td>
+                                </tr>
+                            {% endfor %}
+                            #}
+                        </tbody>
+                    </table>  
                 </div>
-                <hr class="my-4">
-        {% endfor %}
+            <div class="col-md-2"></div>
+        </div>
+        <hr class="my-4">
     </div>  
 
 {% endblock %}
