@@ -5,12 +5,6 @@
 
 }
 
-.Formbody2 {
-    background-color: red;
-    color: white;
-
-}
-
 .imgfooter {
     width: 900px;
 }
@@ -27,15 +21,14 @@
     color: white;
 
 }
-/* HR */
+
 .my-4 {
     margin: 25%;
     height: 1px;
     background-image: radial-gradient(circle at center,black 50px, red );
 
 }
-/**/
-/* Modal Configue Reglement, Recrutement */
+
 .modalVeryLarge {
     color: white;
 }
@@ -71,14 +64,22 @@
 
 }
 
-.mainButtonmodal1 {
-    width: 100%;
-    
-}
-
 .mainButtonmodal {
     width: 100%;
     border-color:blue;
+    
+}
+
+.mainButton0 {
+    width: 15%;
+    border-color:white;
+    color:white;
+    height: 35px;
+        
+}
+
+.mainButtonmodal1 {
+    width: 100%;
     
 }
 
@@ -87,15 +88,45 @@
     border-color:red;
 
 }
-/**/
-/* Partie Recrutement */
-.my-5 {
-    margin: 10%;
-    height: 2px;
-    width: 200px;
-    background-color: red;
 
-} 
+.mainButton3, a, u {
+    width: 10%;
+    border-color:red;
+    
+
+}
+.mainButton4 {
+    width: 30%;
+    border-color:blue;
+
+}
+
+.mainButton5 {
+    width: 11%;
+    border-color:blue;
+
+}
+
+.mainButton6 {
+    width: 10%;
+    border-color:grey;
+    color:grey;
+
+}
+
+.mainButton7 {
+    width: 11%;
+    border-color:blue;
+    color: blue
+
+}
+
+.mainButton8, a  {
+    width: 15%;
+    border-color:white;
+    color:white;
+    height: 35px;
+}
 
 .modal button {
     color: white;
@@ -110,15 +141,7 @@
     width: 15%;
 
 }
- /**/
 
-/*Connection*/
-.mainButton4 {
-    width: 50%;
-    border-color:red;
-
-}
-/**/
 /* Carousel */
 .d-block1 {
     width: 500px;
@@ -131,8 +154,7 @@ label {
     color:red;
 
 }
-/**/
-/* Navbar */
+
 
 .form-inline .form-control  {
     color: blue;
@@ -144,7 +166,7 @@ label {
 .navbar {
     /*background-image: radial-gradient(circle at center,red 50px, black );*/
     background-color: black;
-    border:5px double red;
+    border: 1px solid red;
     
 }
 
@@ -154,31 +176,8 @@ label {
     margin-top: 15px;
 }
 
-.mainButton3, a {
-    width: 10%;
-    border-color:red;
-    
 
-}
 
-.mainButton5 {
-    width: 10%;
-    border-color:blue;
-
-}
-
-.mainButton6 {
-    width: 10%;
-    border-color:grey;
-    color:grey;
-
-}
-
-.mainButton7 {
-    width: 10%;
-    border-color:blue;
-
-}
 
 .dropdown-menu {
     background-color: black;
@@ -189,9 +188,6 @@ label {
 .dropdown-item {
     color:red;
 }
-
-/**/
-/*Card Message*/
 
 .name {
     color:white;
@@ -210,12 +206,6 @@ label {
 .card {
     background-color: black;
     border-color:red;
-}
-/**/
-
-h5
-{
-    border: 1px red solid;
 }
 
 .imgfooter {

@@ -35,6 +35,11 @@ class Categorie
      */
     private $subcats;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
     public function __construct()
     {
         $this->subcats = new ArrayCollection();

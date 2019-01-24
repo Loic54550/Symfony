@@ -40,13 +40,13 @@ class ForumController extends AbstractController
     }
     
     /**
-     * @Route("/subcat/{categorie}", name="subcat")
+     * @Route("/subcat/{subcat}", name="subcat")
      */
-    public function subcat(Request $request, SessionInterface $session, $categorie)
+    public function subcat(Request $request, SessionInterface $session, $subcat)
     {
         $subcat = $this->getDoctrine()
-            ->getRepository(Categorie::class)
-            ->find($categorie)
+            ->getRepository(Subcat::class)
+            ->find($subcat)
         ;
         
         return $this->render('subcat/subcat.html.twig', [
@@ -56,24 +56,23 @@ class ForumController extends AbstractController
     }
 
     /**
-     * @Route("/topic/{topic}", name="topic")
+     * @Route("/topic/{topic}/page/{page}", name="topic")
      */
-    public function topic(Request $request, SessionInterface $session, $topic)
+    public function topic(Request $request, SessionInterface $session, $topic, $page)
     {
-        ///////////////////////////// SESSION id
         $utilisateur = $this->getDoctrine()
             ->getRepository(Utilisateur::class)
             ->find($session->get('id'))
         ;
 
-        $topic = $this->getDoctrine()
-            ->getRepository(Topic::class)
-            ->find($topic)
-        ;
-
         $messages = $this->getDoctrine()
             ->getRepository(Message::class)
             ->findAll()
+        ;
+
+        $messagesInPage = $this->getDoctrine()
+            ->getRepository(Message::class)
+            ->findBy(array(), array(), 5, ($page * 5) - 5)
         ;
 
         $message = new Message();
@@ -107,8 +106,8 @@ class ForumController extends AbstractController
 
         return $this->render('topic/topic.html.twig', [
             'formMessage' => $formMessage->createView(),
-            'topic' => $topic,
             'messages' => $messages,
+            'messagesInPage' => $messagesInPage,
             'pseudo' => $session->get('pseudo'),
             'utilisateur' => $utilisateur,
         ]);
