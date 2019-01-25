@@ -52,6 +52,7 @@ class ForumController extends AbstractController
         return $this->render('subcat/subcat.html.twig', [
             'subcat' => $subcat,
             'pseudo' => $session->get('pseudo'),
+            'page' => 1,
         ]);
     }
 
@@ -110,6 +111,7 @@ class ForumController extends AbstractController
             'messagesInPage' => $messagesInPage,
             'pseudo' => $session->get('pseudo'),
             'utilisateur' => $utilisateur,
+            
         ]);
     }
 }
