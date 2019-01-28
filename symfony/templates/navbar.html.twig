@@ -1,19 +1,15 @@
 {% if pseudo != "" %}
     <nav class="navbar navbar-expand-lg">
-        <button type="button" class=" mr-sm-2 btn btn-outline-dark mainButton0" "text" data-toggle="modal" data-target="#exampleModal7">Bienvenue, {{ pseudo }}</p></button>
-        <button type="button" class=" mr-sm-2 btn btn-outline-dark mainButton8"><a href="{{ path('deconnection') }}">Déconnection</a></button>
+        <button class=" mr-sm-2 btn btn-outline-dark mainButton0"  data-toggle="modal" data-target="#exampleModal7">Bienvenue, {{ pseudo }}</p></button>
+        <button class=" mr-sm-5 btn btn-outline-danger mainButton8"><a href="{{ path('deconnection') }}">Déconnection</a></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-1" type="search" placeholder=".........." aria-label="Search">
-                    <button class="btn btn-outline-primary mainButton4 mr-sm-3" type="submit">Recherche</button>
-                </form>
-            <button type="button" class=" mr-sm-2 btn btn-outline-danger mainButton3" href="#"><u>Youtube</u></button>
-            <button type="button" class=" mr-sm-2 btn btn-outline-primary mainButton5" href="#"><u>Facebook</u></button>
-            <button type="button" class=" mr-sm-2 btn btn-outline-dark mainButton6" href="#"><u>Discord</u></button>
-            <button type="button" class=" mr-sm-2 btn btn-outline-primary mainButton7" href="#"><u>Battle.net</u></button>
+            <a class=" mr-sm-2 btn btn-outline-danger mainButton3" href="https://www.youtube.com/?gl=FR&hl=fr"><u>Youtube</u></a>
+            <a class=" mr-sm-2 btn btn-outline-primary mainButton5" href="https://www.facebook.com/"><u>Facebook</u></a>
+            <a class=" mr-sm-2 btn btn-outline-dark mainButton6" href="https://discordapp.com/login"><u>Discord</u></a>
+            <a class=" mr-sm-2 btn btn-outline-primary mainButton7" href="https://www.blizzard.com/fr-fr/"><u>Battle.net</u></a>
         </div>
     </nav>
     {{ include('index/modalTemplate/modalcompte.html.twig') }}

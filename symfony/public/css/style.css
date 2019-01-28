@@ -1,8 +1,9 @@
 
 .Formbody {
-    background-color: black;
+    background-image:url(../img/wowpage/5.jpg);
     color: white;
-
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 .imgfooter {
@@ -33,27 +34,28 @@
     color: white;
 }
 
-.modal{
-    background-image:url(../img/wowpage/4.jpg);
+.modal {
+    background-image:url(../img/wowpage/5.jpg);
 	
 
 }
 
-.modal-header{
+.modal-header {
     background-color: black;
     border: black;
     color: white;
+    border: 1px solid red;
 }
 
 
-.modal-body{
+.modal-body {
     background-color: black;
     color: white;
-    border: 3px solid red;
+    border: 1px solid red;
     
 }
 
-.modal-footer{
+.modal-footer {
     background-color: black;
     border-top: 5px solid black;
 
@@ -89,9 +91,10 @@
 
 }
 
-.mainButton3, a, u {
+.mainButton3 {
     width: 10%;
     border-color:red;
+    background-color: black;
     
 
 }
@@ -104,6 +107,7 @@
 .mainButton5 {
     width: 11%;
     border-color:blue;
+    background-color: black;
 
 }
 
@@ -111,20 +115,20 @@
     width: 10%;
     border-color:grey;
     color:grey;
-
+    background-color: black;
 }
 
 .mainButton7 {
     width: 11%;
     border-color:blue;
-    color: blue
+    color: blue;
+    background-color: black;
 
 }
 
-.mainButton8, a  {
+.mainButton8, a {
     width: 15%;
-    border-color:white;
-    color:white;
+    border-color:red;
     height: 35px;
 }
 
@@ -156,7 +160,7 @@ label {
 }
 
 
-.form-inline .form-control  {
+.form-inline .form-control {
     color: blue;
     border-color: blue;
     background-color: black;
@@ -213,4 +217,24 @@ label {
     height: 75px;
 }
 
+.titletopic {
+    color: red;
+}
 
+.name {
+    color:red;
+}
+
+.pseudo{
+    color:white;
+}
+
+.page-link:not(:disabled):not(.disabled) {
+    background-color: black;
+    border-color: red;
+}
+
+.reponse {
+    border-color: blue;
+   
+}

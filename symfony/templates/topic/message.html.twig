@@ -1,19 +1,22 @@
-<h1>{{ messages[0].topic.name }}</h1>
-
+<div class="titletopic text-center">
+<h1><u>{{ messages[0].topic.name }}</u></h1>
+</div>
 {% if messages|length == 0 %}
     AUCUN message
 {% else %}
     {% for message in messagesInPage %}
     <div class="row">
         <div class="col-md-2"></div>
-            <div class="col-md-8 card mb-3">
-                <div class="card-header "><u class="name"></u></div>
-                <div class="card-body text-light">
-                    <h5 class="card-title">{{ message.utilisateur.pseudo }}</h5>
-                    {{ message.content }}
+            <div class="col-md-8 card reponse mb-3">
+                <div class="card-header reponse">
+                    <h5 class="card-title pseudo">{{ message.utilisateur.pseudo }}</h5>
+                </div>
+                <div class="card-body reponse text-light">
+                    {{ message.content }} 
+                </div>
+                <div class="card-footer reponse text-center">
                     <u class="name">{{ message.date|date("d/m/Y") }}</u>
                 </div>
-                <div class="card-footer "></div>
             </div>
         <div class="col-md-2"></div>
     </div>
@@ -24,44 +27,50 @@
     <div class="row">
         <div class="col-md-2"></div>
             <div class="col-md-8 card mb-3">
-                <div class="card-header "><u class="name">Re: {{ messages[0].topic.name }}</u></div>
+                <div class="card-header "><h3><u class="name">Intitulé du Topic: {{ messages[0].topic.name }}</u></h3></div>
                 <div class="card-body text-light">
-                    <h5 class="card-title">REPONDRE</h5>
+                    <h6 class="card-title"><u>Votre Message</u></h6>
                     {{ form_widget(formMessage.content) }}
                     <u class="name">{{ form_widget(formMessage.date) }}</u>
                 </div>
-                <div class="card-footer ">{{ form_widget(formMessage.Envoyer) }}</div>
+                <div class="card-footer text-center">
+                    {{ form_widget(formMessage.Envoyer) }}
+                </div>
             </div>
         <div class="col-md-2"></div>
     </div>
 {{ form_end(formMessage) }}
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        {% if messages|length == 0 %}
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-        {% else %}
-            {% set page = 1 %}
-            {% set i = 0 %}
-            {% for message in messages %}
-                {% set i = i + 1 %}
-                {% if i is divisible by(5) %}
-                    <li class="page-item"><a class="page-link" href="{{ path('topic', { 'topic': messages[0].topic.id, 'page': page }) }}">{{ page }}</a></li>
-                    {% set page = page + 1 %}
+<div class="row">
+    <div class="col-md-2"></div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% if messages|length == 0 %}
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                {% else %}
+                    {% set page = 1 %}
+                    {% set i = 0 %}
+                    {% for message in messages %}
+                        {% set i = i + 1 %}
+                        {% if i is divisible by(5) %}
+                            <li class="page-item"><a class="page-link" href="{{ path('topic', { 'topic': messages[0].topic.id, 'page': page }) }}">{{ page }}</a></li>
+                            {% set page = page + 1 %}
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
-            {% endfor %}
-        {% endif %}
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <div class="col-md-8"></div>        
+</div>
