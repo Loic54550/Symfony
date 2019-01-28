@@ -23,4 +23,7 @@ class NavbarController extends AbstractController
         
         return $this->redirectToRoute('acc');
     }
+
+    
+
 }

@@ -20,11 +20,11 @@
                             <th>Dernier messsage</th>
                         </tr>
                     </thead>
-                    {% if subcat|length == 0 %}
-                            <tr>
-                                <td>Aucun message</td>
-                                <td></td>
-                            </tr>
+                        {% if subcat|length == 0 %}
+                        <tr>
+                            <td>Aucun message</td>
+                            <td></td>
+                        </tr>
                         {% else %}
                             {% for topic in subcat.topics %}
                                 <tr>
