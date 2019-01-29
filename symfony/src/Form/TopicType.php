@@ -21,10 +21,8 @@ class TopicType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Pseudo')
-            ->add('mail')
-            ->add('password')
-            ->add('save', SubmitType::class)
+            ->add('name')
+            ->add('Creer', SubmitType::class)
         ;
     }
 }

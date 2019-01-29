@@ -19,6 +19,7 @@ use App\Entity\Topic;
 use App\Form\UtilisateurType;
 use App\Form\UtilisateurInscriptionType;
 use App\Form\MessageType;
+use App\Form\TopicType;
 use App\Repository\CategorieRepository;
 
 class UtilisateurController extends AbstractController

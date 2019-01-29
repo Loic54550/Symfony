@@ -1,15 +1,9 @@
-html {
-    height: 100%;
-}
 
-body {
-    height: 55%;
-}
 .Formbody {
     background-image:url(../img/wowpage/5.jpg);
     color: white;
     background-color: black;
-    height: 200%;
+
 }
 
 .imgfooter {
@@ -156,8 +150,8 @@ body {
 
 /* Carousel */
 .d-block1 {
-    width: 600px;
-    height: 250px;
+    width: 500px;
+    height: 200px;
     
 }
 /**/

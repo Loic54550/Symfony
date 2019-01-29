@@ -48,6 +48,11 @@ class Topic
      */
     private $messages;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur", inversedBy="topics")
+     */
+    private $utilisateur;
+
     public function __construct()
     {
         $this->messages = new ArrayCollection();
@@ -121,6 +126,18 @@ class Topic
                 $message->setTopic(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateur $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

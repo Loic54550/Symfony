@@ -1,0 +1,28 @@
+<!-- modal create topic -->
+<div class="modal fade " id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5>Création</h5>
+      </div>
+      <div class="modal-body function">
+          <div class="row">
+            <div class="col-md-1"></div>
+              <div class="col-md-10">
+                {{ form_start(form.name) }}
+                <div class="row">
+                  <div>{{ form_label(form.name) }}</div>
+                  <div>{{ form_widget(form.name) }}</div>
+                </div>
+                <div class="row">
+                  <div>{{ form_widget(form.name) }}</div>
+                </div>  
+              </div>
+            {{ form_end(form) }}
+          </div>
+            <div class="col-md-1"></div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>

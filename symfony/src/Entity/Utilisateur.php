@@ -49,9 +49,15 @@ class Utilisateur
      */
     private $messages;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Topic", mappedBy="utilisateur")
+     */
+    private $topics;
+
     public function __construct()
     {
         $this->messages = new ArrayCollection();
+        $this->topics = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,6 +126,37 @@ class Utilisateur
             // set the owning side to null (unless already changed)
             if ($message->getUtilisateur() === $this) {
                 $message->setUtilisateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Topic[]
+     */
+    public function getTopics(): Collection
+    {
+        return $this->topics;
+    }
+
+    public function addTopic(Topic $topic): self
+    {
+        if (!$this->topics->contains($topic)) {
+            $this->topics[] = $topic;
+            $topic->setUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTopic(Topic $topic): self
+    {
+        if ($this->topics->contains($topic)) {
+            $this->topics->removeElement($topic);
+            // set the owning side to null (unless already changed)
+            if ($topic->getUtilisateur() === $this) {
+                $topic->setUtilisateur(null);
             }
         }
 

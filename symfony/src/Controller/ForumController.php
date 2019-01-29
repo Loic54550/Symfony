@@ -19,6 +19,7 @@ use App\Entity\Topic;
 use App\Form\UtilisateurType;
 use App\Form\UtilisateurInscriptionType;
 use App\Form\MessageType;
+use App\Form\TopicType;
 use App\Repository\CategorieRepository;
 
 class ForumController extends AbstractController
@@ -44,6 +45,35 @@ class ForumController extends AbstractController
      */
     public function subcat(Request $request, SessionInterface $session, $subcat)
     {
+        $topic = new Topic();
+        $formTopic = $this->createForm(TopicType::class, $topic);
+        if ($request->isMethod('POST')) 
+        {
+            $formTopic->submit($request->request->get($formTopic->getName()));
+            if ($formTopic->isSubmitted() && $formTopic->isValid()) 
+            {
+                $topic = $formTopic->getData();
+                
+                $utilisateur = $this->getDoctrine()
+                    ->getRepository(Utilisateur::class)
+                    ->find($session->get('id'))
+                ;
+                $topic->setUtilisateur($utilisateur);
+                $subcat = $this->getDoctrine()
+                    ->getRepository(Subcat::class)
+                    ->find($subcat)
+                ;
+                $topic->setSubcat($subcat);
+
+                $topic->setDate(new \DateTime("now"));
+
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($topic);
+                $entityManager->flush();
+            }
+        }
+
         $subcat = $this->getDoctrine()
             ->getRepository(Subcat::class)
             ->find($subcat)
@@ -53,6 +83,7 @@ class ForumController extends AbstractController
             'subcat' => $subcat,
             'pseudo' => $session->get('pseudo'),
             'page' => 1,
+            'form' => $formTopic->createView(),
         ]);
         
         
@@ -95,7 +126,7 @@ class ForumController extends AbstractController
                 $message = $formMessage->getData();
 
                 
-                $message->setDateEdition(new \DateTime('today'));
+                $message->setDate(new \DateTime('today'));
                 $message->setTopic($topic);
 
                 $message->setUtilisateur($utilisateur);
