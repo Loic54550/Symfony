@@ -2,14 +2,18 @@
     <nav class="navbar navbar-expand-lg">
         <button class=" mr-sm-2 btn btn-outline-dark mainButton0"  data-toggle="modal" data-target="#exampleModal7">Bienvenue, {{ pseudo }}</p></button>
         <button class=" mr-sm-5 btn btn-outline-danger mainButton8"><a href="{{ path('deconnection') }}">Déconnection</a></button>
+        <button class=" mr-sm-5 btn btn-outline-dark mainButton0"><a href="{{ path('return') }}">Index du forum</a></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <a class=" mr-sm-2 btn btn-outline-danger mainButton3" href="https://www.youtube.com/?gl=FR&hl=fr"><u>Youtube</u></a>
-            <a class=" mr-sm-2 btn btn-outline-primary mainButton5" href="https://www.facebook.com/"><u>Facebook</u></a>
+        <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+            <div class="spinner-grow  textY mr-sm-1" role="status"></div>
+            <a class=" mr-sm-3 btn btn-outline-danger mainButton3" href="https://www.youtube.com/?gl=FR&hl=fr"><u>Youtube</u></a>
+            <div class="spinner-grow  textFB mr-sm-1" role="status"></div>
+            <a class=" mr-sm-1 btn btn-outline-primary mainButton7" href="https://www.facebook.com/"><u>Facebook</u></a>
+            <a class=" mr-sm-3 btn btn-outline-primary mainButton7" href="https://www.blizzard.com/fr-fr/"><u>Battle.net</u></a>
+            <div class="spinner-grow  textD mr-sm-1" role="status"></div>
             <a class=" mr-sm-2 btn btn-outline-dark mainButton6" href="https://discordapp.com/login"><u>Discord</u></a>
-            <a class=" mr-sm-2 btn btn-outline-primary mainButton7" href="https://www.blizzard.com/fr-fr/"><u>Battle.net</u></a>
         </div>
     </nav>
     {{ include('index/modalTemplate/modalcompte.html.twig') }}

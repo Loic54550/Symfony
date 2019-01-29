@@ -16,7 +16,10 @@
                             <tbody>
                                 {% for subcat in categorie.subcats %}
                                     <tr>
-                                        <td><a href="{{ path('subcat', { 'subcat': subcat.id }) }}">{{ subcat.name }}</a></td>
+                                        <td>
+                                            <div class="spinner-grow  textFB mr-sm-1" role="status"></div>
+                                            <a href="{{ path('subcat', { 'subcat': subcat.id }) }}">{{ subcat.name }}
+                                            </a></td>
                                         <td>utilisateur</td>
                                         <td>date/heure</td>
                                     </tr>

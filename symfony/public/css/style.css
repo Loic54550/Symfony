@@ -34,7 +34,7 @@
 }
 
 .modal {
-    background-image:url(../img/wowpage/5.jpg);
+    background-image:url(../img/wowpage/kak.png);
 	
 
 }
@@ -72,8 +72,7 @@
 }
 
 .mainButton0 {
-    width: 15%;
-    border-color:white;
+    width: 11%;
     color:white;
     height: 35px;
         
@@ -91,7 +90,7 @@
 }
 
 .mainButton3 {
-    width: 10%;
+    width: 12%;
     border-color:red;
     background-color: black;
     
@@ -104,21 +103,20 @@
 }
 
 .mainButton5 {
-    width: 11%;
+    width: 12%;
     border-color:blue;
     background-color: black;
 
 }
 
 .mainButton6 {
-    width: 10%;
-    border-color:grey;
+    width: 12%;
     color:grey;
     background-color: black;
 }
 
 .mainButton7 {
-    width: 11%;
+    width: 12%;
     border-color:blue;
     color: blue;
     background-color: black;
@@ -126,7 +124,7 @@
 }
 
 .mainButton8, a {
-    width: 15%;
+    width: 10%;
     border-color:red;
     height: 35px;
 }
@@ -236,4 +234,16 @@ label {
 .reponse {
     border-color: blue;
    
+}
+
+.textY {
+    color:red;
+}
+
+.textFB {
+    color:blue;
+}
+
+.textD {
+    color:grey;
 }

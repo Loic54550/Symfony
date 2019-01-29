@@ -24,6 +24,18 @@ class NavbarController extends AbstractController
         return $this->redirectToRoute('acc');
     }
 
-    
+    /**
+     * @Route("/return", name="return")
+     */
+    public function return(Request $request, SessionInterface $session)
+    {
+        return $this->redirectToRoute('forum');
+    }
+
+
+
+
+
+
 
 }

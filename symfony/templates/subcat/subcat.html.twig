@@ -28,7 +28,10 @@
                         {% else %}
                             {% for topic in subcat.topics %}
                                 <tr>
-                                    <td><a href="{{ path('topic', { 'topic': topic.id, 'page': page }) }}">{{ topic.name }}</a></td>
+                                    <td>
+                                        <div class="spinner-grow  textFB mr-sm-1" role="status"></div>
+                                        <a href="{{ path('topic', { 'topic': topic.id, 'page': page }) }}">{{ topic.name }}
+                                        </a></td>
                                     <td>@mdo</td>
                                 </tr>
                             {% endfor %}
