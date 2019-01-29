@@ -54,7 +54,8 @@ class ForumController extends AbstractController
             'pseudo' => $session->get('pseudo'),
             'page' => 1,
         ]);
-
+        
+        
     }
 
     /**
@@ -66,7 +67,6 @@ class ForumController extends AbstractController
             ->getRepository(Topic::class)
             ->find($topic)
         ;
-
 
         $utilisateur = $this->getDoctrine()
             ->getRepository(Utilisateur::class)

@@ -24,7 +24,7 @@ use App\Repository\CategorieRepository;
 class UtilisateurController extends AbstractController
 {
     /**
-     * @Route("/", name="acc")
+     * @Route("/index", name="index")
      */
     public function index(Request $request, SessionInterface $session)
     {
