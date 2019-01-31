@@ -57,7 +57,7 @@ class UtilisateurController extends AbstractController
                     $session->set('pseudo', $utilisateur->getPseudo());
                     return $this->redirectToRoute('forum');
                 } else {
-                    return $this->redirectToRoute('acc');
+                    return $this->redirectToRoute('index');
                 }
                 
                 
@@ -75,7 +75,7 @@ class UtilisateurController extends AbstractController
                     $entityManager->persist($utilisateur);
                     $entityManager->flush();
                     
-                    return $this->redirectToRoute('acc');
+                    return $this->redirectToRoute('forum');
                 }
             }
         }
