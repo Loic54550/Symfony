@@ -1,3 +1,9 @@
+html {
+    color: white;
+    background-color: black;
+
+}
+
 
 .Formbody {
     background-image:url(../img/wowpage/5.jpg);
@@ -172,6 +178,7 @@ label {
     /*background-image: radial-gradient(circle at center,red 50px, black );*/
     background-color: black;
     border: 1px solid red;
+    margin-top: .5rem;
     
 }
 

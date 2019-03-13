@@ -10,7 +10,6 @@
                             <thead class="thead">
                                 <tr>
                                     <th><u>{{ categorie.name }}</u></th>
-                                    <th>Dernier messsage</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -19,9 +18,8 @@
                                         <td>
                                             <div class="spinner-grow  textFB mr-sm-1" role="status"></div>
                                             <a href="{{ path('subcat', { 'subcat': subcat.id }) }}">{{ subcat.name }}
-                                            </a></td>
-                                        <td>utilisateur</td>
-                                        <td>date/heure</td>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
