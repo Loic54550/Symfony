@@ -17,7 +17,6 @@
                     <thead class="thead">
                         <tr>
                             <th><u>{{ subcat.name }}</u></th>
-                            <th>Dernier messsage</th>
                         </tr>
                     </thead>
                         {% if subcat|length == 0 %}
@@ -31,8 +30,8 @@
                                     <td>
                                         <div class="spinner-grow  textFB mr-sm-1" role="status"></div>
                                         <a href="{{ path('topic', { 'topic': topic.id, 'page': page }) }}">{{ topic.name }}
-                                        </a></td>
-                                    <td>@mdo</td>
+                                        </a>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         {% endif %}

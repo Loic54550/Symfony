@@ -24,7 +24,7 @@ class UtilisateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('mail', EmailType::class, ['attr' => ['placeholder' => 'ex: linda@salope.com']])
+            ->add('mail', EmailType::class, ['attr' => ['placeholder' => 'ex: lolo@gmail.com']])
             ->add('password', PasswordType::class)
             ->add('connection', SubmitType::class)
         ;

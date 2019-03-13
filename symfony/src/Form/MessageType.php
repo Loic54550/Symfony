@@ -20,7 +20,7 @@ class MessageType extends AbstractType
         ));
     }
 
-    // function pour générer le formulaire
+    // function pour générer les messages
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

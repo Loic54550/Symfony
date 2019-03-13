@@ -75,7 +75,7 @@ class UtilisateurController extends AbstractController
                     $entityManager->persist($utilisateur);
                     $entityManager->flush();
                     
-                    return $this->redirectToRoute('forum');
+                    return $this->redirectToRoute('index');
                 }
             }
         }
