@@ -4,7 +4,6 @@ html {
 
 }
 
-
 .Formbody {
     color: white;
     background-color: black;
@@ -51,7 +50,6 @@ body {
 
 .modal {
     background-image:url(../img/wowpage/kak.png);
-	
 
 }
 
@@ -182,7 +180,7 @@ label {
 .navbar {
     /*background-image: radial-gradient(circle at center,red 50px, black );*/
     background-color: black;
-    border: 1px solid red;
+    border: 2px solid red;
     margin-left: .5rem;
     margin-right: .5rem;
     margin-top: .5rem;
