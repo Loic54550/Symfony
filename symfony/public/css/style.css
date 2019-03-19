@@ -70,7 +70,7 @@ html {
 
 }
 .mainButton {
-    width: 40%;
+    width: 100%;
     border-color:blue;
 
 }
@@ -94,7 +94,7 @@ html {
 }
 
 .mainButton2 {
-    width: 50%;
+    width: 100%;
     border-color:red;
 
 }
@@ -185,9 +185,6 @@ label {
     font-size: 1 rem;
     margin-top: 15px;
 }
-
-
-
 
 .dropdown-menu {
     background-color: black;
