@@ -127,6 +127,7 @@ class ForumController extends AbstractController
 
                 
                 $message->setDate(new \DateTime('today'));
+                $message->setDateEdition(new \DateTime('today'));
                 $message->setTopic($topic);
 
                 $message->setUtilisateur($utilisateur);
@@ -138,13 +139,9 @@ class ForumController extends AbstractController
             }
         }
 
-        $topic = $this->getDoctrine()
-            ->getRepository(Topic::class)
-            ->find($topic)
-        ;
-
         return $this->render('topic/topic.html.twig', [
             'formMessage' => $formMessage->createView(),
+            'titleTopic' => $topic->getName(),
             'messages' => $messages,
             'messagesInPage' => $messagesInPage,
             'pseudo' => $session->get('pseudo'),
