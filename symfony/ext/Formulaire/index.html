@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="js.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>TP : Un formulaire interactif</title>
+</head>
+    <body class="formbody">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-center">
+                <img src="giphy.gif">
+                <h1 class="one">Formulaire d'inscription</h1>
+            </div>
+        </div>
+        <form id="myForm">
+            <h4 span class="formcol">Sexe :</span></h4>
+            <label class="formLabel"><input name="sex" type="radio" value="H" />Homme</label>
+            <label class="formLabel"><input name="sex" type="radio" value="F" />Femme</label>
+
+            <span class="formTooltip">Vous devez sélectionnez votre sexe</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="lastName" >Nom :</label></h4>
+            <input name="lastName" id="lastName" type="text" style="width: 300px" placeholder="votre Nom"/>
+            <span class="formTooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="firstName">Prénom :</label></h4>
+            <input name="firstName" id="firstName" type="text" style="width: 300px" placeholder="votre Prénom"/>
+            <span class="formTooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="age">Âge :</label></h4>
+            <input name="age" id="age" type="text" style="width: 300px" placeholder="votre Âge"/>
+            <span class="formTooltip">L'âge doit être compris entre 5 et 140</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="login">Adresse Mail :</label></h4>
+            <input name="email" id="email" type="text" style="width: 300px" placeholder="ex: ........@......fr/com/net" />
+            <span class="formTooltip">Adresse mail doit Non conforme</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="login">Pseudo :</label></h4>
+            <input name="login" id="login" type="text" style="width: 300px" placeholder="votre Pseudo" />
+            <span class="formTooltip">Le pseudo ne peut pas faire moins de 4 caractères</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="pwd1">Mot de passe :</label></h4>
+            <input name="pwd1" id="pwd1" type="password" style="width: 300px" placeholder="votre Mot de passe" />
+            <span class="formTooltip">Le mot de passe ne doit pas faire moins de 6 caractères</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="pwd2">Mot de passe (confirmation) :</label></h4>
+            <input name="pwd2" id="pwd2" type="password" style="width: 300px" placeholder="confirmation Mot de passe" />
+            <span class="formTooltip">Le mot de passe de confirmation doit être identique à celui d'origine</span>
+            <br /><br />
+
+            <h4 label class="formcol" for="country">Pays :</label></h4>
+            <select name="country" id="country">
+            	<option value="none" >Sélectionnez votre pays de résidence</option>
+                <option value="us">États-Unis</option>
+            	<option value="en">Angleterre</option>
+            	<option value="fr">Belgique</option>
+                <option value="fr">Croatie</option>
+            	<option value="fr">France</option>
+                <option value="fr">Suisse</option>    
+        	</select>
+            <span class="formTooltip">Vous devez sélectionner votre pays de résidence</span>
+            <br /><br />
+
+            <div class="row">
+            <div class="col-md-2"></div>
+                <span class="formInput"></span>
+                <input type="submit" class="btn btn-primary" value="M'inscrire" />
+                <input type="reset" class="btn btn-danger" value="Réinitialiser le formulaire" />
+            </div>
+        </form>
+    </body>
+</html>
