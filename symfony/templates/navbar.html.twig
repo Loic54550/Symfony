@@ -1,7 +1,6 @@
 {% if pseudo != "" %}
     <nav class="navbar navbar-expand-lg">
-        <button class=" mr-sm-2 btn btn-outline-dark mainButton0"  data-toggle="modal" data-target="#exampleModal7">Bienvenue, {{ pseudo }}</p></button>
-        <button class=" mr-sm-5 btn btn-outline-danger mainButton8"><a href="{{ path('deconnection') }}">Déconnection</a></button>
+        <button class=" mr-sm-5 btn btn-outline-danger mainButton8"><a href="{{ path('deconnection') }}">Bienvenue, {{ pseudo }} Déconnection</a></button>
         <button class=" mr-sm-5 btn btn-outline-dark mainButton0"><a href="{{ path('return') }}">Index du forum</a></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
